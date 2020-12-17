@@ -9,7 +9,7 @@ public class Convert {
     }
     public static int quarters(int total)
     {
-        return total/25;
+        return (total - dollars(total)*100)/25;
     }
 
     public static int dimes(int total)
