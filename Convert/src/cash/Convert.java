@@ -3,25 +3,33 @@ package cash;
 import java.util.Scanner;
 
 public class Convert {
+	
+	
+// Find total number of dollars
     public static int dollars(int total)
     {
         return total/100;
     }
+    
+ // Find total number of quarters
     public static int quarters(int total)
     {
         return (total - dollars(total)*100)/25;
     }
 
+ // Find total number of dimes
     public static int dimes(int total)
     {
         return (total -(dollars(total)*100) - (quarters(total)*25)) /10;
     }
 
+ // Find total number of nickels
     public static int nickels(int total)
     {
         return (total - (dollars(total)*100) - (quarters(total)*25) - (dimes(total)*10)) / 5;
     }
-
+    
+ // Find total number of pennies
     public static int pennies(int total)
     {
         return total - (dollars(total)*100) - (quarters(total)*25) - (dimes(total)*10) - (nickels(total)*5);
@@ -32,7 +40,8 @@ public class Convert {
         String total;
         int intTotal;
 
-        System.out.println("Please enter in the total amount of dollars and cents:");
+     // prompt the user to enter amount
+        System.out.println("Please enter the total amount:");
         total = keyboard.next();
 
         total = total.replace(".","");
