@@ -14,17 +14,17 @@ public class Convert {
 
     public static int dimes(int total)
     {
-        return (total - quarters(total)*25) /10;
+        return (total -(dollars(total)*100) - (quarters(total)*25)) /10;
     }
 
     public static int nickels(int total)
     {
-        return (total - (quarters(total)*25) - (dimes(total)*10)) / 5;
+        return (total - (dollars(total)*100) - (quarters(total)*25) - (dimes(total)*10)) / 5;
     }
 
     public static int pennies(int total)
     {
-        return total - (quarters(total)*25) - (dimes(total)*10) - (nickels(total)*5);
+        return total - (dollars(total)*100) - (quarters(total)*25) - (dimes(total)*10) - (nickels(total)*5);
     }
 
     public static void main(String[] args) {
